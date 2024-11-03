@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>LDT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #canvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main id="main" class="container">
+      <canvas
+        id="canvas"
+        tabindex="1"
+        oncontextmenu="event.preventDefault()"
+      ></canvas>
+    </main>
+  </body>
+  <script>
+    var Module = {
+      canvas: (function () {
+        return document.getElementById("canvas");
+      })(),
+    };
+  </script>
+  {{{ SCRIPT }}}
+</html>

@@ -1,0 +1,10 @@
+.{
+    .name = "unplugged",
+    .version = "0.1.0",
+    .dependencies = .{
+        .@"raylib-zig" = .{
+            .path = "../../third_party/raylib-zig",
+        },
+    },
+    .paths = .{""},
+}

@@ -1,0 +1,46 @@
+{
+	"identifier": "level_1",
+	"uniqueIdentifer": "c0d19de0-73f0-11ef-89dc-e3e19fb85091",
+	"x": 320,
+	"y": 0,
+	"width": 272,
+	"height": 272,
+	"bgColor": "#140F2D",
+	"neighbourLevels": [],
+	"customFields" : {},
+	"layers": [
+		"draw_obstacle_autotiler.png",
+		"draw_objects.png",
+		"pipeline_autotiler.png",
+		"pipeline_int_grid.png",
+		"obstacle_int_grid.png"
+	],
+	"entities": {
+		"start_plug": [
+			{
+				"id": "start_plug",
+				"iid": "d9b3b7a0-73f0-11ef-a644-7d48fa6e9b9a",
+				"layer": "entities",
+				"x": 128,
+				"y": 176,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields" : {}
+			}
+		],
+		"end_plug": [
+			{
+				"id": "end_plug",
+				"iid": "db271dc0-73f0-11ef-a644-f70bc0a3b5af",
+				"layer": "entities",
+				"x": 128,
+				"y": 80,
+				"width": 16,
+				"height": 16,
+				"color": 16705377,
+				"customFields" : {}
+			}
+		]
+	}
+}

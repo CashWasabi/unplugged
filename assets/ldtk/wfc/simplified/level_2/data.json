@@ -1,0 +1,59 @@
+{
+	"identifier": "level_2",
+	"uniqueIdentifer": "c632b8f0-73f0-11ef-89dc-fddbce53e94f",
+	"x": 640,
+	"y": 0,
+	"width": 272,
+	"height": 272,
+	"bgColor": "#140F2D",
+	"neighbourLevels": [],
+	"customFields" : {},
+	"layers": [
+		"draw_obstacle_autotiler.png",
+		"draw_objects.png",
+		"pipeline_autotiler.png",
+		"pipeline_int_grid.png",
+		"obstacle_int_grid.png"
+	],
+	"entities": {
+		"start_plug": [
+			{
+				"id": "start_plug",
+				"iid": "df71bfc0-73f0-11ef-a644-7bb1271b5675",
+				"layer": "entities",
+				"x": 128,
+				"y": 176,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields" : {}
+			}
+		],
+		"end_plug": [
+			{
+				"id": "end_plug",
+				"iid": "e0e796e0-73f0-11ef-a644-73f8a2b82053",
+				"layer": "entities",
+				"x": 128,
+				"y": 80,
+				"width": 16,
+				"height": 16,
+				"color": 16705377,
+				"customFields" : {}
+			}
+		],
+		"cutter": [
+			{
+				"id": "cutter",
+				"iid": "1210a760-73f0-11ef-aca1-0d94c253c614",
+				"layer": "entities",
+				"x": 112,
+				"y": 128,
+				"width": 16,
+				"height": 16,
+				"color": 16711748,
+				"customFields" : {}
+			}
+		]
+	}
+}
