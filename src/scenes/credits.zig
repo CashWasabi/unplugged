@@ -116,7 +116,7 @@ fn isFinished() bool {
 fn drawUI(window_rec: Rect) void {
     const position = window_rec.center();
     gui.common.drawText(
-        "CREDITS",
+        "Thank you for playing!",
         .{
             .default = .{
                 .font_ptr = SCENE_DATA.font_ptr,
