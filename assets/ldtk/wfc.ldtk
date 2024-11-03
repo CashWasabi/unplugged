@@ -86,7 +86,7 @@
 			"gridSize": 16,
 			"guideGridWid": 0,
 			"guideGridHei": 0,
-			"displayOpacity": 1,
+			"displayOpacity": 0.5,
 			"inactiveOpacity": 1,
 			"hideInList": false,
 			"hideFieldsWhenInactive": false,
@@ -495,7 +495,7 @@
 		},
 		{
 			"__type": "Tiles",
-			"identifier": "draw_objects",
+			"identifier": "objects",
 			"type": "Tiles",
 			"uid": 41,
 			"doc": null,

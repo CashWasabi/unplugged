@@ -10,7 +10,7 @@
 	"customFields" : {},
 	"layers": [
 		"draw_obstacle_autotiler.png",
-		"draw_objects.png",
+		"objects.png",
 		"pipeline_autotiler.png",
 		"pipeline_int_grid.png",
 		"obstacle_int_grid.png"
@@ -19,10 +19,10 @@
 		"start_plug": [
 			{
 				"id": "start_plug",
-				"iid": "a670f7c0-73f0-11ef-aca1-1110e80778c9",
+				"iid": "ab06c2c0-73f0-11ef-8d36-5dbe397dd17c",
 				"layer": "entities",
-				"x": 128,
-				"y": 176,
+				"x": 64,
+				"y": 192,
 				"width": 16,
 				"height": 16,
 				"color": 6539085,
@@ -32,13 +32,59 @@
 		"end_plug": [
 			{
 				"id": "end_plug",
-				"iid": "fe679890-73f0-11ef-aca1-21a3ccae2d3f",
+				"iid": "b1e444a0-73f0-11ef-8d36-cfe9bb589865",
 				"layer": "entities",
-				"x": 128,
-				"y": 80,
+				"x": 192,
+				"y": 64,
 				"width": 16,
 				"height": 16,
 				"color": 16705377,
+				"customFields" : {}
+			}
+		],
+		"cutter": [
+			{
+				"id": "cutter",
+				"iid": "c1f19cd0-73f0-11ef-8d36-830617fab6c8",
+				"layer": "entities",
+				"x": 96,
+				"y": 144,
+				"width": 16,
+				"height": 16,
+				"color": 16711748,
+				"customFields" : {}
+			},
+			{
+				"id": "cutter",
+				"iid": "c2c4f260-73f0-11ef-8d36-b1fc5dc2c3fc",
+				"layer": "entities",
+				"x": 112,
+				"y": 64,
+				"width": 16,
+				"height": 16,
+				"color": 16711748,
+				"customFields" : {}
+			},
+			{
+				"id": "cutter",
+				"iid": "c392f0c0-73f0-11ef-8d36-a7315c20efc7",
+				"layer": "entities",
+				"x": 208,
+				"y": 128,
+				"width": 16,
+				"height": 16,
+				"color": 16711748,
+				"customFields" : {}
+			},
+			{
+				"id": "cutter",
+				"iid": "c414caf0-73f0-11ef-8d36-21705c3415c5",
+				"layer": "entities",
+				"x": 160,
+				"y": 192,
+				"width": 16,
+				"height": 16,
+				"color": 16711748,
 				"customFields" : {}
 			}
 		]

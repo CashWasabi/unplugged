@@ -10,7 +10,7 @@
 	"customFields" : {},
 	"layers": [
 		"draw_obstacle_autotiler.png",
-		"draw_objects.png",
+		"objects.png",
 		"pipeline_autotiler.png",
 		"pipeline_int_grid.png",
 		"obstacle_int_grid.png"
