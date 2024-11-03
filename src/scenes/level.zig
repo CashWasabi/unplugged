@@ -256,6 +256,7 @@ fn draw(ctx: *Context) !void {
         if (input_ptr.all_plugged) {
             drawNextLevelButton(&SCENE_DATA.input, window_rec);
         }
+        drawInstructions(window_rec);
     }
 }
 
@@ -355,6 +356,34 @@ fn update(ctx: *Context) !void {
 
 fn isFinished() bool {
     return SCENE_DATA.done;
+}
+
+fn drawInstructions(window_rec: Rect) void {
+    var position = window_rec.bottomCenter();
+    position[0] -= 10;
+    const text = "connect the pipes by clicking on the lit [!] to enter pipe mode; click again to exit";
+
+    _ = gui.basic.label(
+        text,
+        .{
+            .default = .{
+                .font_ptr = SCENE_DATA.font_ptr,
+                .font_size = 20.0,
+                .color = rl.Color.white,
+            },
+        },
+        .{
+            .filled_outline = .{
+                .padding = .{ .top = 20, .right = 20, .bottom = 20, .left = 20 },
+                .fill_color = rl.Color.black,
+                .outline_color = rl.Color.white,
+            },
+        },
+        .{
+            .position = .{ position[0], position[1] },
+            .anchor = .{ 0.5, 1 },
+        },
+    );
 }
 
 fn drawNextLevelButton(input_ptr: *Input, window_rec: Rect) void {
