@@ -26,19 +26,7 @@ const world = @import("../world.zig");
 
 pub const Input = struct {
     toggle_pull: bool = false,
-    zoom_in: bool = false,
-    zoom_out: bool = false,
-    zoom_reset: bool = false,
-
-    // ui
-    ui_zoom_in: bool = false,
-    ui_zoom_out: bool = false,
-    ui_zoom_reset: bool = false,
-
-    // next level
     ui_next_level: bool = false,
-
-    // all plugged check
     all_plugged: bool = false,
 
     pub fn update(self: *Input) void {
@@ -46,11 +34,6 @@ pub const Input = struct {
         if (rl.isMouseButtonPressed(rl.MouseButton.mouse_button_left)) {
             self.toggle_pull = !self.toggle_pull;
         }
-
-        // zoom
-        self.zoom_in = rl.isKeyPressed(rl.KeyboardKey.key_i) or self.ui_zoom_in;
-        self.zoom_out = rl.isKeyPressed(rl.KeyboardKey.key_o) or self.ui_zoom_out;
-        self.zoom_reset = rl.isKeyPressed(rl.KeyboardKey.key_r) or self.ui_zoom_reset;
     }
 };
 
@@ -58,7 +41,6 @@ pub const SceneData = struct {
     active_level: usize = 0,
     input: Input = .{},
     cursor: world.Cursor = .{},
-    zoom_step: f32 = 0.1,
     screen_shake_vfx: vfx.ScreenShakeVFX = .{},
     window_size: Vec2(f32) = .{ 0, 0 },
 
@@ -287,14 +269,6 @@ fn update(ctx: *Context) !void {
     SCENE_DATA.screen_shake_vfx.update(&ctx.cam.inner_cam.target);
     input_ptr.update();
 
-    if (input_ptr.zoom_out) {
-        ctx.cam.zoomStep(-SCENE_DATA.zoom_step);
-    } else if (input_ptr.zoom_in) {
-        ctx.cam.zoomStep(SCENE_DATA.zoom_step);
-    } else if (input_ptr.zoom_reset) {
-        ctx.cam.setZoom(1.0);
-    }
-
     if (rl.isWindowResized()) {
         ctx.window.resize();
         SCENE_DATA.window_size = ctx.window.size;
@@ -317,7 +291,7 @@ fn update(ctx: *Context) !void {
     if (all_plugged) {
         if (!input_ptr.all_plugged) {
             SCENE_DATA.screen_shake_vfx.start(
-                800,
+                0.5,
                 .{ ctx.cam.inner_cam.target.x, ctx.cam.inner_cam.target.y },
             );
         }
@@ -345,7 +319,7 @@ fn update(ctx: *Context) !void {
             for (pipe_line_ptr.pieces.items) |piece| {
                 if (world.isNeighbour(@intCast(cutter.coords), @intCast(piece))) {
                     SCENE_DATA.screen_shake_vfx.start(
-                        400,
+                        0.10,
                         .{ ctx.cam.inner_cam.target.x, ctx.cam.inner_cam.target.y },
                     );
                     input_ptr.toggle_pull = false;

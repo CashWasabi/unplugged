@@ -94,27 +94,27 @@ pub const SpriteSheetVFX = struct {
 // screen shake
 pub const ScreenShakeVFX = struct {
     max_frames: usize = 0,
-    frames: ?usize = 0,
+    duration: ?f32 = 0, // in seconds
     origin_position: Vec2(f32) = .{ 0, 0 },
     distortion: Vec2(f32) = .{ 1, 1 },
 
     pub fn start(
         self: *ScreenShakeVFX,
-        frames: usize,
+        duration: f32,
         origin_position: Vec2(f32),
     ) void {
-        self.frames = frames;
+        self.duration = duration;
         self.origin_position = origin_position;
     }
 
     pub fn update(self: *ScreenShakeVFX, cam_pos: *rl.Vector2) void {
-        if (self.frames == null) return;
-        if (self.frames.? <= 0) {
+        if (self.duration == null) return;
+        if (self.duration.? <= 0) {
             cam_pos.* = .{
                 .x = self.origin_position[0],
                 .y = self.origin_position[1],
             };
-            self.frames = null;
+            self.duration = null;
             return;
         }
 
@@ -125,6 +125,6 @@ pub const ScreenShakeVFX = struct {
             .y = self.origin_position[1] + y,
         };
         cam_pos.* = random_position;
-        self.frames.? -= 1;
+        self.duration.? -= rl.getFrameTime();
     }
 };
