@@ -1,10 +1,11 @@
 .{
-    .name = "unplugged",
+    .name = .unplugged,
     .version = "0.1.0",
+    .fingerprint = 0x820c78b4e3859a74,
     .dependencies = .{
-        .@"raylib-zig" = .{
+        .raylib_zig = .{
             .url = "https://github.com/Not-Nik/raylib-zig/archive/devel.tar.gz",
-            .hash = "12202f8c415153088be8df39a51e0a4c9d402afd403422a0dcc9afdd417e437a6fdb",
+            .hash = "raylib_zig-5.6.0-dev-KE8REM0tBQAHVn9Xjqlgu9l1qgfTmP8aJa1kLhD584bV",
         },
     },
     .paths = .{""},

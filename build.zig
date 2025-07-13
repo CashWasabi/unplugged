@@ -1,5 +1,5 @@
 const std = @import("std");
-const rlz = @import("raylib-zig");
+const rlz = @import("raylib_zig");
 const builtin = @import("builtin");
 
 const emccOutputDir = "zig-out" ++ std.fs.path.sep_str ++ "htmlout" ++ std.fs.path.sep_str;
@@ -57,7 +57,7 @@ pub fn build(b: *std.Build) !void {
     const optimize = b.standardOptimizeOption(.{});
 
     // raylib-zig
-    const raylib_dep = b.dependency("raylib-zig", .{
+    const raylib_dep = b.dependency("raylib_zig", .{
         .target = target,
         .optimize = optimize,
     });
@@ -68,7 +68,7 @@ pub fn build(b: *std.Build) !void {
     // ==> WASM BUILD <==
     // ==================
     if (target.query.os_tag == .emscripten) {
-        const exe_lib = rlz.emcc.compileForEmscripten(
+        const exe_lib = try rlz.emcc.compileForEmscripten(
             b,
             "wfc",
             "src/main.zig",
